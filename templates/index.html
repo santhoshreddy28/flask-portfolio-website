@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Santhosh Reddy Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Santhosh Reddy</h1>
+        <p>Cybersecurity Enthusiast | Python Developer</p>
+    </header>
+
+    <section>
+        <h2>About Me</h2>
+        <p>
+            Passionate about cybersecurity, ethical hacking,
+            bug bounty hunting, and software development.
+        </p>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>Java</li>
+            <li>Flask</li>
+            <li>Linux</li>
+            <li>Cybersecurity</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Projects</h2>
+        <ul>
+            <li>Hackathon Portfolio Aggregator</li>
+            <li>Java Swing ToDo Application</li>
+            <li>Bug Bounty Recon Automation</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Contact Me</h2>
+
+        {% if success %}
+            <p>Message submitted successfully.</p>
+        {% endif %}
+
+        <form action="/contact" method="POST">
+            <input type="text" name="name" placeholder="Name" required><br><br>
+
+            <input type="email" name="email" placeholder="Email" required><br><br>
+
+            <textarea name="message" placeholder="Message" required></textarea><br><br>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+</body>
+</html>
